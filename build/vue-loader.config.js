@@ -1,8 +1,11 @@
 module.exports = (isDev) => {
   return {
-    preserveWhitespace: true,
+    preserveWhitepace: true,
     extractCSS: !isDev,
-    cssModules: {},
+    cssModules: {
+      localIdentName: isDev ? '[path]-[name]-[hash:base64:5]' : '[hash:base64:5]',
+      camelCase: true
+    },
     // hotReload: false
     loaders: {
       // 'docs': docsLoader
